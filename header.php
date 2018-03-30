@@ -6,6 +6,16 @@
     <?php wp_head(); ?>
   </head>
 
-  <body>
+    <?php
 
-      <?php wp_nav_menu(array('theme_location'=>'primary')) ?>
+    if( is_front_page() ):
+      $apollo1_classes = array('class-one', 'class-two');
+    else:
+      $apollo1_classes = array('class-three');
+    endif;
+
+    ?>
+
+  <body <?php body_class($apollo1_classes); ?>>
+
+    <?php wp_nav_menu(array('theme_location'=>'primary')) ?>
